@@ -1,0 +1,34 @@
+{% extends "final/layout.html" %}
+{% block body %}
+    <body>
+        <div class="navbar">
+            <div onclick="Home()" class="active" id="home-button">Home</div>
+            <div onclick="Search()" class="" id="search-button">Search</div>
+            <div  onclick="location.assign('/logout')" id="logout-button">Logout</div>
+            <div onclick="Watchlist()" id="watchlist-button">Watchlist</div>
+            <div style="float: right;">{{ request.user }}</div>
+        </div>
+        <div class="movie-container">
+
+        </div>
+        <div class="film-container">
+
+        </div>
+
+        <div class="search-container">
+            <form action="" method="post" onsubmit="return false;" id="search-form">
+                <input type="text" name="search-film" id="search-film">
+                <button onclick="Searched();" onsubmit="return false;">Search</button>
+            </form>
+            <div class="search-results">
+
+            </div>
+
+        
+        </div>
+        <div class="watchlist">
+                
+        </div>
+    </body>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "final/layout.html" %}
+
+{% block body %}
+
+    <h2 class="film-info">Register</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post" class="login-form">
+        {% csrf_token %}
+        <div class="">
+            <input class="login-input" autofocus type="text" name="username" placeholder="Username">
+        </div>
+        <div class="">
+            <input class="login-input" type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="">
+            <input class="login-input" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="">
+            <input class="login-input" type="password" name="confirmation" placeholder="Confirm Password">
+        </div>
+        <input class="login-button" type="submit" value="Register">
+    </form>
+
+    <div class="film-info">Already have an account? <a href="{% url 'login' %}" class="film-info">Log In here.</a></div>
+
+{% endblock %}
